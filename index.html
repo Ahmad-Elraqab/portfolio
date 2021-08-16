@@ -7,16 +7,8 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
-
-  <title>Reflux HTML CSS Template</title>
-  <!--
-Reflux Template
-https://templatemo.com/tm-531-reflux
--->
-  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css" />
   <link rel="stylesheet" href="assets/css/templatemo-style.css" />
   <link rel="stylesheet" href="assets/css/owl.css" />
@@ -25,7 +17,6 @@ https://templatemo.com/tm-531-reflux
 
 <body>
   <div id="page-wraper">
-    <!-- Sidebar Menu -->
     <div class="responsive-nav">
       <i class="fa fa-bars" id="menu-toggle"></i>
       <div id="menu" class="menu">
@@ -58,9 +49,9 @@ https://templatemo.com/tm-531-reflux
             </ul>
           </div>
           <div class="copyright-text">
-            <p style="margin: 0px; padding: 10px; border-top: 2px solid #fff;">
+            <p style="margin: 0px; padding: 10px;">
               amjrr99@gmail.com</p>
-            <p style="margin: 0px; padding: 10px; border-top: 2px solid #fff;">
+            <p style="margin: 0px; padding: 10px;">
               +966-540017063</p>
           </div>
         </div>
@@ -324,6 +315,39 @@ https://templatemo.com/tm-531-reflux
                   </figcaption>
                 </figure>
               </div>
+              <div class="isotope-item" data-type="mobile">
+                <figure class="snip1321">
+                  <img src="assets/images/munch.jpg" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://github.com/Ahmad-Elraqab/munch"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-desktop"></i></a>
+                    <h4>Munch</h4>
+                    <span>Flutter</span>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="isotope-item" data-type="mobile">
+                <figure class="snip1321">
+                  <img src="assets/images/food-delivery.jpg" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://github.com/Ahmad-Elraqab/new-delivery-app"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-desktop"></i></a>
+                    <h4>Food Delivery</h4>
+                    <span>Flutter</span>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="isotope-item" data-type="mobile">
+                <figure class="snip1321">
+                  <img src="assets/images/logo.png" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://github.com/Elraqab-Organization/eService_app"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-desktop"></i></a>
+                    <h4>Servicify</h4>
+                    <span>Flutter</span>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
@@ -407,7 +431,7 @@ https://templatemo.com/tm-531-reflux
         <div class="row">
           <div class="right-content">
             <div class="container">
-              <form id="contact" action="index.php" method="post">
+              <form id="contact" method="post">
                 <div class="row">
                   <div class="col-md-6">
                     <fieldset>
@@ -435,9 +459,10 @@ https://templatemo.com/tm-531-reflux
                   </div>
                   <div class="col-md-12">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">
+                      <!-- <button type="submit" id="form-submit" class="button">
                         Send Message
-                      </button>
+                      </button> -->
+                      <input type="button" value="Send Email" onclick="sendEmail()" />
                     </fieldset>
                   </div>
                 </div>
@@ -457,6 +482,7 @@ https://templatemo.com/tm-531-reflux
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/lightbox.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
     //according to loftblog tut
     $(".main-menu li:first").addClass("active");
@@ -507,6 +533,27 @@ https://templatemo.com/tm-531-reflux
       checkSection();
     });
 
+    $("#contact").submit(function () {
+
+      sendEmail()
+    })
+
+  </script>
+  <script type="text/javascript">
+    function sendEmail() {
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "amjrr99@gmail.com",
+        Password: "201802Mm10162*",
+        To: 'amjrr99@gmail.com',
+        From: "amjrr99@gmail.com",
+        Subject: "Sending Email using javascript",
+        Body: "Well that was easy!!",
+      })
+        .then(function (message) {
+          alert("mail sent successfully")
+        });
+    }
   </script>
 </body>
 
